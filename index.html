@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NASA</title>
+  </head>
+  <body>
+    <div class="pic-of-the-day-wrapper">
+      <div class="pic-of-the-day-text-cont">
+        <div class="pic-of-the-day-title">Astronomy Picture of the Day</div>
+        <div class="pic-of-the-day-explanation"></div>
+
+        <div class="pic-of-the-day-button-cont">
+          <a href="#APOD" class="btn1" id="more-APOD-btn">More pictures</a>
+        </div>
+      </div>
+
+      <div class="pic-of-the-day-img-wrapper">
+        <img class="pic-of-the-day clickable-img" alt="Фото дня" />
+        <div class="pic-of-the-day-img-title"></div>
+      </div>
+    </div>
+
+    <!-- тут будут демстрации-->
+
+    <div class="constructor-wrapper">
+      <div id="APOD" class="APOD-constructor-wrapper">
+        <div class="constructor-title">Astronomy Picture of the Day</div>
+        <div class="constructor-settings-cont">
+          <div class="constructor-description">
+            Картинку какого дня хотите увидеть?
+          </div>
+          <input type="date" id="constructor-APOD-date-input" />
+          <button class="btn1" id="constructor-APOD-show-btn">Show</button>
+        </div>
+
+        <div class="constructor-APOD-result"></div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-box"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
