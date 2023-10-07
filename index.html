@@ -14,6 +14,9 @@
 
         <div class="pic-of-the-day-button-cont">
           <a href="#APOD" class="btn1" id="more-APOD-btn">More pictures</a>
+          <span class="btn1" data-translate="pic-of-the-day-explanation"
+            >Translate to Russian</span
+          >
         </div>
       </div>
 
@@ -30,10 +33,12 @@
         <div class="constructor-title">Astronomy Picture of the Day</div>
         <div class="constructor-settings-cont">
           <div class="constructor-description">
-            Картинку какого дня хотите увидеть?
+            What day's picture do you want to see?
           </div>
-          <input type="date" id="constructor-APOD-date-input" />
-          <button class="btn1" id="constructor-APOD-show-btn">Show</button>
+          <div class="APOD-constructor-button-cont">
+            <input type="date" id="constructor-APOD-date-input" />
+            <span class="btn1" id="constructor-APOD-show-btn">Show</span>
+          </div>
         </div>
 
         <div class="constructor-APOD-result"></div>

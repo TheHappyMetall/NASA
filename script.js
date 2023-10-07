@@ -1,9 +1,13 @@
 const token = "T0oWforYzYoSOUsHsmiARfQ9sLz4Qkqbr7m7jnNw";
 
-// Modal
+// Modal and Translate
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("clickable-img")) {
     openInModal(`<img class="modal-img" src="${e.target.currentSrc}">`);
+  }
+
+  if (e.target.hasAttribute("data-translate")) {
+    translate(e.target.getAttribute("data-translate"));
   }
 });
 
@@ -59,6 +63,11 @@ async function getResponse(url, typeOfOperation) {
         <img class="constructor-APOD-result-img clickable-img" src="${data.hdurl}">
         <div class="constructor-APOD-result-img-title">${data.title}</div>
         <div class="constructor-APOD-result-explanation">${data.explanation}</div>
+        <span
+            class="btn1"
+            data-translate="constructor-APOD-result-explanation"
+            >Translate to Russian</span
+          >
         `;
         break;
     }
@@ -70,4 +79,12 @@ async function getResponse(url, typeOfOperation) {
 function openInModal(el) {
   document.querySelector(".modal-box").innerHTML = el;
   document.querySelector(".modal").classList.add("open");
+}
+
+function translate(transClass) {
+  window.open(
+    `https://translate.yandex.ru/?source_lang=en&target_lang=ru&text=${
+      document.querySelector("." + transClass).textContent
+    }`
+  );
 }

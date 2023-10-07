@@ -58,13 +58,19 @@ input {
 }
 
 .btn1 {
+  display: grid;
+  place-items: center;
+  width: fit-content;
   background: transparent;
   border: var(--textcolor) 2px solid;
   color: var(--textcolor);
-  padding: 10px 15px;
+  padding: 7px 5px;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s ease-out;
+  font-size: 12px;
+  text-align: center;
+  user-select: none;
 }
 
 .btn1:hover {
@@ -156,8 +162,8 @@ input {
 
 .pic-of-the-day-button-cont {
   height: 5vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #more-APOD-btn {
@@ -187,10 +193,20 @@ input {
 
 /* Contructor APOD */
 .APOD-constructor-wrapper {
+  padding: 35px 0;
+}
+
+.APOD-constructor-button-cont {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
 .constructor-APOD-result {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .constructor-APOD-result-img {
@@ -206,4 +222,39 @@ input {
 }
 
 .constructor-APOD-result-explanation {
+  margin-bottom: 20px;
+  padding: 5px 25px;
+}
+
+@media screen and (max-width: 850px) {
+  .pic-of-the-day-wrapper {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .pic-of-the-day-text-cont {
+    margin-bottom: 20px;
+  }
+
+  .pic-of-the-day-title {
+  }
+
+  .pic-of-the-day-explanation {
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .pic-of-the-day-img-wrapper {
+    width: 100vw;
+  }
+
+  .pic-of-the-day {
+    max-width: 100%;
+  }
+
+  .pic-of-the-day-img-title {
+  }
+
+  .pic-of-the-day-button-cont {
+  }
 }
