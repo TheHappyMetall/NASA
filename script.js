@@ -49,20 +49,27 @@ async function getResponse(url, typeOfOperation) {
 
     switch (typeOfOperation) {
       case "APOD":
-        document.querySelector(".pic-of-the-day").src = data.hdurl;
+        document.querySelector(".pic-of-the-day").src =
+          window.screen.availWidth > 850 ? data.hdurl : data.url;
         document.querySelector(".pic-of-the-day-img-title").textContent =
           data.title;
         document.querySelector(".pic-of-the-day-explanation").textContent =
           data.explanation;
+        console.log(data);
         break;
+
       // тут будут остальные..
 
       // Constructor
       case "APOD_Constructor":
         document.querySelector(".constructor-APOD-result").innerHTML = `
-        <img class="constructor-APOD-result-img clickable-img" src="${data.hdurl}">
+        <img class="constructor-APOD-result-img clickable-img" src="${
+          window.screen.availWidth > 850 ? data.hdurl : data.url
+        }">
         <div class="constructor-APOD-result-img-title">${data.title}</div>
-        <div class="constructor-APOD-result-explanation">${data.explanation}</div>
+        <div class="constructor-APOD-result-explanation">${
+          data.explanation
+        }</div>
         <span
             class="btn1"
             data-translate="constructor-APOD-result-explanation"
